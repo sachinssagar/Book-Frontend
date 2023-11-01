@@ -18,7 +18,7 @@ const CreateBooks = () => {
     };
     setLoading(true);
     axios
-      .post("http://localhost:5000/books", data)
+      .post("https://book-app.azurewebsites.net/", data)
       .then(() => {
         console.log(data);
         setLoading(false);

@@ -37,7 +37,7 @@ const EditBook = () => {
     };
     setLoading(true);
     axios
-      .put(`http://localhost:5000/books/${id}`, data)
+      .put(`https://book-app.azurewebsites.net/${id}`, data)
       .then(() => {
         console.log(data);
         setLoading(false);
