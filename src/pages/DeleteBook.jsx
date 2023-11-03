@@ -11,7 +11,7 @@ const DeleteBook = () => {
   const handleDeleteBook = () => {
     setLoading(true);
     axios
-      .delete(`https://book-app.azurewebsites.net/${id}`)
+      .delete(`https://book-app.azurewebsites.net/books/${id}`)
       .then(() => {
         setLoading(false);
         navigate("/");

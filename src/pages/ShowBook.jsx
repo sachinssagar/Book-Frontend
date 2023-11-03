@@ -12,7 +12,7 @@ const ShowBook = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`https://book-app.azurewebsites.net/${id}`)
+      .get(`https://book-app.azurewebsites.net/books/${id}`)
       .then((response) => {
         console.log(response.data);
         setBook(response.data);

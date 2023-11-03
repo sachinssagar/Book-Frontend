@@ -15,7 +15,7 @@ const EditBook = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`http://localhost:5000/books/${id}`)
+      .get(`https://book-app.azurewebsites.net/books/${id}`)
       .then((response) => {
         setTitle(response.data.title);
         setAuthor(response.data.author);
@@ -37,7 +37,7 @@ const EditBook = () => {
     };
     setLoading(true);
     axios
-      .put(`https://book-app.azurewebsites.net/${id}`, data)
+      .put(`https://book-app.azurewebsites.net/books/${id}`, data)
       .then(() => {
         console.log(data);
         setLoading(false);

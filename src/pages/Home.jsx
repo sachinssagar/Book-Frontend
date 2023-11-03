@@ -13,7 +13,7 @@ const Home = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("https://book-app.azurewebsites.net/")
+      .get("https://book-app.azurewebsites.net/books")
       .then((response) => {
         // console.log(response.data.data);
         setBooks(response.data.data);
