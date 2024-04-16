@@ -3,6 +3,7 @@ import BackButton from "../componets/BackButton";
 import Spinner from "../componets/Spinner";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
+import { VITE_API } from "../App";
 
 const EditBook = () => {
   const [title, setTitle] = useState("");
@@ -15,7 +16,7 @@ const EditBook = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`https://book-app.azurewebsites.net/books/${id}`)
+      .get(`${VITE_API}/${id}`)
       .then((response) => {
         setTitle(response.data.title);
         setAuthor(response.data.author);
@@ -37,7 +38,7 @@ const EditBook = () => {
     };
     setLoading(true);
     axios
-      .put(`https://book-app.azurewebsites.net/books/${id}`, data)
+      .put(`${VITE_API}/${id}`, data)
       .then(() => {
         console.log(data);
         setLoading(false);

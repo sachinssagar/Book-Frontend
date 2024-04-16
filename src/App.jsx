@@ -5,6 +5,8 @@ import ShowBook from "./pages/ShowBook";
 import EditBook from "./pages/EditBook";
 import DeleteBook from "./pages/DeleteBook";
 
+export const { VITE_API } = import.meta.env;
+
 const App = () => {
   return (
     <Routes>

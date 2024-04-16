@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { AiOutlineEdit } from "react-icons/ai";
 import { BsInfoCircle } from "react-icons/bs";
 import { MdOutlineAddBox, MdOutlineDelete } from "react-icons/md";
+import { VITE_API } from "../App";
 
 const Home = () => {
   const [books, setBooks] = useState([]);
@@ -13,7 +14,7 @@ const Home = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("https://book-app.azurewebsites.net/books")
+      .get(`${VITE_API}`)
       .then((response) => {
         // console.log(response.data.data);
         setBooks(response.data.data);

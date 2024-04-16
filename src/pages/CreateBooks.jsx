@@ -3,6 +3,7 @@ import BackButton from "../componets/BackButton";
 import Spinner from "../componets/Spinner";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { VITE_API } from "../App";
 
 const CreateBooks = () => {
   const [title, setTitle] = useState("");
@@ -18,7 +19,7 @@ const CreateBooks = () => {
     };
     setLoading(true);
     axios
-      .post("https://book-app.azurewebsites.net/books", data)
+      .post(`${VITE_API}`, data)
       .then(() => {
         console.log(data);
         setLoading(false);
